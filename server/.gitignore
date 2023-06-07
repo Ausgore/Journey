@@ -1,0 +1,9 @@
+# dependencies
+node_modules
+
+# environment
+.env
+
+# uploads
+public/uploads/*
+!public/uploads/README.md
