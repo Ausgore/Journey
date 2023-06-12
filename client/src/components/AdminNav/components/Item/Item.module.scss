@@ -1,0 +1,16 @@
+.button {
+	color: #11CD99;
+	&:hover {
+		background-color: #232B2B;
+		.icon {
+			color: #11CD99;
+		}
+		.text {
+			color: #11CD99;
+		}
+	}
+}
+
+.icon, .text {
+	color: white
+}

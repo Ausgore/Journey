@@ -5,13 +5,16 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Loading from "./pages/Loading.jsx";
 import "./main.scss";
+import { StyledEngineProvider } from "@mui/material";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Suspense fallback={<Loading />}>
+		<StyledEngineProvider injectFirst>
 			<Router>
-				<App />
+				<Suspense fallback={<Loading />}>
+					<App />
+				</Suspense>
 			</Router>
-		</Suspense>
+		</StyledEngineProvider>
 	</StrictMode>
 );
