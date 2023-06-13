@@ -1,16 +1,21 @@
-.button {
-	color: #11CD99;
-	&:hover {
-		background-color: #232B2B;
-		.icon {
+.active {
+	background-color: #232B2B;
+	&.item {
+		.icon, .text {
 			color: #11CD99;
-		}
-		.text {
-			color: #11CD99;
-		}
+		}	
 	}
 }
 
-.icon, .text {
-	color: white
+.item {
+	color: #11CD99;
+	&:hover {
+		background-color: #232B2B;
+		.icon, .text {
+			color: #11CD99;
+		}
+	}
+	.icon, .text {
+		color: white;
+	}
 }

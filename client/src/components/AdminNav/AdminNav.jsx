@@ -24,13 +24,13 @@ export default function AdminNav() {
 			<NavHeader width={width} handleDrawerToggle={handleDrawerToggle} />
 			<NavBody width={width} mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} >
 				<Category title="User Experience">
-					<Item icon={<Person />} to="/"> Users </Item>
-					<Item icon={<Discount />} to="/admin"> Rewards </Item>
+					<Item icon={<Person />} to="/admin"> Users </Item>
+					<Item icon={<Discount />} to="/"> Rewards </Item>
 					<Item icon={<Replay />} to="/"> Refunds </Item>
 				</Category>
 				<Category title="Routing">
 					<Item icon={<Bus />} to="/"> Buses </Item>
-					<Item icon={<Flag />} to="/admin"> Bus Stops </Item>
+					<Item icon={<Flag />} to="/"> Bus Stops </Item>
 					<Item icon={<Route />} to="/"> Routes </Item>
 				</Category>
 			</NavBody>

@@ -1,9 +1,11 @@
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import MenuButton from "./MenuButton";
+import MenuButton from "./components/MenuButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+
+import { Link } from "react-router-dom";
 
 export default function NavBody({ mobileOpen, width, handleDrawerToggle, children }) {
 	return (
@@ -27,7 +29,9 @@ export default function NavBody({ mobileOpen, width, handleDrawerToggle, childre
 				open
 			>
 				<Toolbar style={{ paddingLeft: 17 }}>
-					<Typography variant="h5" noWrap component="div" sx={{ paddingTop: 2 }} style={{ color: "white" }}> J<span style={{ color: "#11CD99" }}>o</span>urney </Typography>
+					<Typography variant="h5" noWrap component={Link} sx={{ paddingTop: 2 }} to="/" className="undecorate"> 
+						J<span style={{ color: "#11CD99" }}>o</span>urney
+					</Typography>
 				</Toolbar>
 				{children}
 			</Drawer>

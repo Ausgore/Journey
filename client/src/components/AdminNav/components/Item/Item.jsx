@@ -3,13 +3,14 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Item.module.scss";
-import { Link } from "react-router-dom";
 
 export default function Item({ icon, to, children }) {
+	const location = useLocation();
 	return (
-		<ListItem key={children} disablePadding>
-			<ListItemButton className={styles.button} component={Link} to={to}>
+		<ListItem key={children} disablePadding component={Link} to={to} className={`${location.pathname == to ? styles.active : ""} ${styles.item}`}>
+			<ListItemButton>
 				<ListItemIcon className={styles.icon}> {icon} </ListItemIcon>
 				<ListItemText primary={children} className={styles.text} />
 			</ListItemButton>
