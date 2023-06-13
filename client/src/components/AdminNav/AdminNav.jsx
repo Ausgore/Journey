@@ -7,15 +7,13 @@ import Category from "./components/Category";
 import NavHeader from "./components/NavHeader";
 import NavBody from "./components/NavBody";
 
-import Bus from "@mui/icons-material/DirectionsBus";
-import Discount from '@mui/icons-material/Discount';
-import Flag from "@mui/icons-material/Flag";
+import ElectricCar from '@mui/icons-material/ElectricCar';
+import EvStation from '@mui/icons-material/EvStation';
+import LocalParking from '@mui/icons-material/LocalParking';
 import Person from "@mui/icons-material/Person";
 import Replay from '@mui/icons-material/Replay';
-import Route from '@mui/icons-material/Route';
 
-export default function AdminNav() {
-	const width = 200;
+export default function AdminNav({ width }) {
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 	const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
@@ -23,15 +21,14 @@ export default function AdminNav() {
 		<Box sx={{ width: { sm: width }, flexShrink: { sm: 0 } }}>
 			<NavHeader width={width} handleDrawerToggle={handleDrawerToggle} />
 			<NavBody width={width} mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} >
-				<Category title="User Experience">
-					<Item icon={<Person />} to="/admin"> Users </Item>
-					<Item icon={<Discount />} to="/"> Rewards </Item>
-					<Item icon={<Replay />} to="/"> Refunds </Item>
+				<Category title="User Management"Experience>
+					<Item icon={<Person />} to="/admin/accounts"> Accounts </Item>
+					<Item icon={<Replay />} to="/admin/refunds"> Refunds </Item>
 				</Category>
-				<Category title="Routing">
-					<Item icon={<Bus />} to="/"> Buses </Item>
-					<Item icon={<Flag />} to="/"> Bus Stops </Item>
-					<Item icon={<Route />} to="/"> Routes </Item>
+				<Category title="Vehicle Management">
+					<Item icon={<ElectricCar />} to="/admin/vehicles"> Vehicles </Item>
+					<Item icon={<LocalParking />} to="/admin/parkingspots"> Parking Spots </Item>
+					<Item icon={<EvStation />} to="/admin/chargingstations"> Charging Stations </Item>
 				</Category>
 			</NavBody>
 		</Box>

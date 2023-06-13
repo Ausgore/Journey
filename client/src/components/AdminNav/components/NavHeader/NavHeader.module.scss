@@ -1,0 +1,16 @@
+.toolbar {
+	justify-content: center;
+	display: flex;
+	width: 81%;
+	.iconSize {
+		font-size: 1.8rem;
+	}
+	.title {
+		margin: auto;
+		text-decoration: none;
+		color: white;
+		span {
+			color: #11CD99
+		}
+	}
+}

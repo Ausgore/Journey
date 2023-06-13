@@ -1,10 +1,10 @@
 import React from "react";
-import Navigation from "../components/Navigation";
+import { Link } from "react-router-dom";
 
 function Home() {
 	return (
 		<>
-			<Navigation />
+			<Link to="/admin/accounts"> Accounts Page </Link>
 			<h1> Home Page </h1>
 		</>
 	);
