@@ -18,3 +18,7 @@ app.get("/", function(req, res) {
 
 import route from "./routes/route";
 app.use("/route", route);
+
+// Test Example for User with Controllers and Database Service
+import user from "./routes/user";
+app.use("/user", user);
