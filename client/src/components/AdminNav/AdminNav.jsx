@@ -9,7 +9,7 @@ import NavBody from "./components/NavBody";
 
 import ElectricCar from '@mui/icons-material/ElectricCar';
 import EvStation from '@mui/icons-material/EvStation';
-import LocalParking from '@mui/icons-material/LocalParking';
+import Location from '@mui/icons-material/LocationOn';
 import Person from "@mui/icons-material/Person";
 import Replay from '@mui/icons-material/Replay';
 
@@ -21,14 +21,12 @@ export default function AdminNav({ width }) {
 		<Box sx={{ width: { sm: width }, flexShrink: { sm: 0 } }}>
 			<NavHeader width={width} handleDrawerToggle={handleDrawerToggle} />
 			<NavBody width={width} mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} >
-				<Category title="User Management"Experience>
+				<Category title="User Management">
 					<Item icon={<Person />} to="/admin/accounts"> Accounts </Item>
 					<Item icon={<Replay />} to="/admin/refunds"> Refunds </Item>
 				</Category>
-				<Category title="Vehicle Management">
-					<Item icon={<ElectricCar />} to="/admin/vehicles"> Vehicles </Item>
-					<Item icon={<LocalParking />} to="/admin/parkingspots"> Parking Spots </Item>
-					<Item icon={<EvStation />} to="/admin/chargingstations"> Charging Stations </Item>
+				<Category title="Routing">
+					<Item icon={<Location />} to="/admin/busstops"> Bus Stops </Item>
 				</Category>
 			</NavBody>
 		</Box>
