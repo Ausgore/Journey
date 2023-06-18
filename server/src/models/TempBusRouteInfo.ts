@@ -7,6 +7,8 @@ interface TempBusRouteInfoAttributes {
     routeId: number;
     busDriverId: number;
     timeSlot: string;
+    numOfSeats: number;
+    price: number;
 }
 
 class TempBusRouteInfo extends Model<TempBusRouteInfoAttributes> {
@@ -14,6 +16,8 @@ class TempBusRouteInfo extends Model<TempBusRouteInfoAttributes> {
     public routeId!: number;
     public busDriverId!: number;
     public timeSlot!: string;
+    public numOfSeats!: number;
+    public price!: number;
 
     static associate(models: AssociatedModels): void {
         TempBusRouteInfo.belongsTo(models.TempRoute, {
@@ -43,6 +47,14 @@ TempBusRouteInfo.init({
     },
     timeSlot: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+    numOfSeats: {
+        type: DataTypes.INTEGER,
+        defaultValue: 24
+    },
+    price: {
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     }
 }, { sequelize, 

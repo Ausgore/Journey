@@ -7,8 +7,13 @@ export default class DatabaseService {
      // drop is a sync method
     static dropTable(model: ModelStatic<Model<any,any>>, confirmDrop: Boolean)
     : void {
-        if(confirmDrop) {
-            model.drop();
+        try {
+            if(confirmDrop) {
+                model.drop();
+            }
+        } catch(err) {
+            console.error(err);
+            throw new Error(err!.toString());
         }
     }
 

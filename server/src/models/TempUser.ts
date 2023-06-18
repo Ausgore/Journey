@@ -3,32 +3,30 @@ import sequelize from "./sequelize";
 import { AssociatedModels } from ".";
 
 interface TempUserAttributes {
-	id: number;
+	custId: number;
 	name: string;
 	email: string;
 	password: string;
 }
 
 class TempUser extends Model<TempUserAttributes> {
-	public id!: number;
+	public custId!: number;
 	public name!: string;
 	public email!: string;
 	public password!: string;
 
 	// associate method to establish relationships with other models
-	/* The Following is an example:
+	// static associate(models: AssociatedModels): void {
+	// 	TempUser.hasMany(models.Booking, {
+	// 		foreignKey: "custId",
+	// 		onDelete: "cascade"
+	// 	});
+	// };
 	
-	static associate(models: AssociatedModels): void {
-		TempUser.hasMany(models.Note, {
-			foreignKey: "userId",
-			onDelete: "cascade"
-		});
-	};
-	*/
 }
 
 TempUser.init({
-	id: { 
+	custId: { 
 		type: DataTypes.INTEGER,
 		primaryKey: true,
 		autoIncrement: true
