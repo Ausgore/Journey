@@ -1,0 +1,40 @@
+@import "../../../../theme.scss";
+
+.link-style {
+    font-size: 1.2rem;
+    padding: 0.5em;
+    margin: 1em 2em;
+    color: $dark-green;
+    font-weight: 600;
+    background: linear-gradient(
+        $light-green, $light-green
+    ) center bottom;
+    // bg width and height
+    background-size: 0% 0.1em; 
+    background-repeat:no-repeat;
+    text-decoration: none;
+}
+
+.genericLinks {
+    @extend .link-style;
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+        background-size: 100% 0.15em;
+        color: $light-green;
+    }
+
+    @media (max-width: 1400px) {
+        margin: 0 0.5em; 
+      }
+
+    @media (max-width: 980px) {
+        padding: 0.3em;
+        margin: 0 0.3em; 
+    }
+}
+
+.active {
+    @extend .link-style;
+    background-size: 100% 0.15em;
+}
