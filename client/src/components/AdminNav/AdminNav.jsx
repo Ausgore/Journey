@@ -7,8 +7,6 @@ import Category from "./components/Category";
 import NavHeader from "./components/NavHeader";
 import NavBody from "./components/NavBody";
 
-import ElectricCar from '@mui/icons-material/ElectricCar';
-import EvStation from '@mui/icons-material/EvStation';
 import Location from '@mui/icons-material/LocationOn';
 import Person from "@mui/icons-material/Person";
 import Replay from '@mui/icons-material/Replay';

@@ -1,0 +1,24 @@
+.darkMode {
+	color: #11CD99;
+	border-color: #11CD99;
+	&:hover {
+		color: #18e4aa;
+		border-color: #18e4aa;
+	}
+}
+
+.lightMode {
+	color: rgb(255, 255, 255);
+	background-color: #11CD99;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.425);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.425);
+	&:hover {
+		background-color: #11b486;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.425);
+	}
+}
+
+.icon {
+	margin-right: 0.4rem;
+	padding-right: 0.4rem;
+}
