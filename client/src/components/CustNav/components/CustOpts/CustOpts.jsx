@@ -14,7 +14,7 @@ export default function CustOpts({ username, profileSrc }) {
       <Typography className={styles.username}>
         {username}
       </Typography>
-      <Avatar src={profileSrc || defaultProfile} alt="userprofile" sx={{ width: 65, height: 65 }}/>
+      <Avatar src={profileSrc || defaultProfile} alt="userprofile" sx={{ sm: {width: 60, height: 60}, md: {width: 65, height: 65} }}/>
     </Box>
   );
 }

@@ -1,14 +1,14 @@
 @import "../../theme.scss";
 
 .navbar {
-    background-color: white;
+    background-color: var(--white);
     padding: 2em;
 }
 
 .logo {
     text-decoration: none;
     font-weight: 900;
-    color: $dark-green;
+    color: var(--dark-green);
     span {
         color: #11CD99;
     }
@@ -16,12 +16,6 @@
     @media (max-width: 1400px) {
         font-size: 2rem;
         margin-right: 1em;
-    }
-}
-
-.links {
-    @media (max-width: 980px) {
-        margin-left: 0;
     }
 }
 

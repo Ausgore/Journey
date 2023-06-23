@@ -11,16 +11,16 @@ import DrawerListItem from './components/DrawerListItem';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import CloseIcon from '@mui/icons-material/Close';
+import Divider from '@mui/material/Divider';
+import styles from "./CustDrawer.module.scss";
 
 export default function CustDrawer({
-    routeLink,
-    aboutLink,
-    forumLink,
-    faqLink,
+    children,
     custLink,
     adminLink,
     registrationLink,
-    isLoggedIn
+    isLoggedIn,
+    username
 }) {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const openMenu = () => setMenuOpen(true);
@@ -29,12 +29,9 @@ export default function CustDrawer({
     const [openSignIn, setOpenSignIn] = useState(false);
     const handleNestedList = () => setOpenSignIn(!openSignIn);
 
-    {/* For Ryan To Set */}
-    const nameOFLoggedInUser = "John Doe";
-  
     return (
         <>
-            <IconButton onClick={openMenu}>
+            <IconButton onClick={openMenu} className={styles.menubtn}>
                 <MenuIcon />
             </IconButton>
             <Drawer
@@ -44,15 +41,17 @@ export default function CustDrawer({
                 onClose={closeMenu}>
                 <List>
                     <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                        <IconButton onClick={closeMenu}>
+                        <IconButton onClick={closeMenu} className={styles.menubtn}>
                             <CloseIcon />
                         </IconButton>
                     </div>
-                    <DrawerListItem listItemText={"Routes"} link={routeLink} />
-                    <DrawerListItem listItemText={"About"} link={aboutLink} />
-                    <DrawerListItem listItemText={"Forums"} link={forumLink} />
-                    <DrawerListItem listItemText={"FAQ"} link={faqLink} />
-
+                    {...children.map((child, index) => (
+                        <>
+                            {child}
+                            {/* If not last index, render divider*/}
+                            {index !== { ...children.length } - 1 && <Divider />}
+                        </>
+                    ))}
                     {/* // For Ryan To Set */}
                     {isLoggedIn === false ?
                         <>
@@ -68,7 +67,7 @@ export default function CustDrawer({
                             </Collapse>
                             <DrawerListItem listItemText={"Sign Up"} link={registrationLink} />
                         </> :
-                        <DrawerListItem listItemText={`Logged In As: ${nameOFLoggedInUser}`} link={"#"} />}
+                        <DrawerListItem listItemText={`Logged In As: ${username}`} link={"#"} />}
                 </List>
             </Drawer>
         </>

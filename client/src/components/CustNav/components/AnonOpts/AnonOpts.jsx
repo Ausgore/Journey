@@ -20,11 +20,14 @@ export default function AnonOpts({ adminLink, custLink, registrationLink }) {
             <Button
                 className={styles.signIn}
                 endIcon={<ArrowDropDownIcon />}
+                variant="contained"
                 id="login-menu-btn"
                 onClick={handleClick}
                 aria-controls={isClicked ? "login-menu" : null}
                 aria-expanded={isClicked ? "true" : null}>
-                Sign In
+                <Typography>
+                    Sign In
+                </Typography>
             </Button>
             <Menu
                 id="login-menu"
@@ -50,8 +53,10 @@ export default function AnonOpts({ adminLink, custLink, registrationLink }) {
                     </Typography>
                 </MenuItem>
             </Menu>
-            <Button variant="p" component={Link} to={registrationLink} className={styles.signUp}>
-                Sign Up
+            <Button variant="contained" component={Link} to={registrationLink} className={styles.signUp}>
+                <Typography>
+                    Sign Up
+                </Typography>
             </Button>
         </Stack>
     )

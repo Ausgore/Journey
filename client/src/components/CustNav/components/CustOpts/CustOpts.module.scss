@@ -1,8 +1,13 @@
 @import "../../../../theme.scss";
 
 .username {
-    color: $light-green;
+    color: --light-green;
     font-size: 1.25rem;
     margin: auto;
     padding: 0 2em;
+
+    @media (max-width: 1080px) {
+        font-size: 1rem;
+        padding: 1em;
+    }
 }
