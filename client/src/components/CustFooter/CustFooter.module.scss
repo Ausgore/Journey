@@ -1,0 +1,12 @@
+@import "../../theme.scss";
+
+.footer {
+    background-color: var(--footer-theme);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 0;
+}
+
+.icon {
+    color: var(--dark-green);
+}

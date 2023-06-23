@@ -1,0 +1,36 @@
+// Theme Palette Colours
+:root {
+    --dark-green: #105157;
+    --light-green: #33BC84;
+    --light-neon-green: #11CD99;
+    --dark-gray: #1A2020;
+    --light-gray: #4B4D58;
+    --white: rgb(255, 255, 255);
+    --footer-theme: #F9F9F9;
+    --orange: #F99D81;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dark-green: white;
+        --light-green: #33BC84;
+        --dark-gray: #1A2020;
+        --light-gray: #4B4D58;
+        --white: #242424;
+        --footer-theme: #131717;
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --dark-green: #105157;
+        --light-green: #33BC84;
+        --dark-gray: #1A2020;
+        --light-gray: #4B4D58;
+        --white: white;
+        --footer-theme: #F9F9F9;
+    }
+}

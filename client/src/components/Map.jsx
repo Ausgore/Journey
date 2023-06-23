@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 
-export default function Map({ width, height }) {
-	const [clickedAddress, setClickedAddress] = useState(null);
-	const [marker, setMarker] = useState(null);
-	
+export default function Map({ width, height, marker, setMarker, clickedAddress, setClickedAddress }) {
 	const { isLoaded } = useJsApiLoader({
 		id: "google-map-script",
 		googleMapsApiKey: import.meta.env.VITE_GOOGLEMAPS_APIKEY
 	});
 
-	const setMap = React.useState(null)[1];
-	const onLoad = React.useCallback(function callback(map) {
+	const setMap = useState(null)[1];
+	const onLoad = useCallback(function callback(map) {
 		map.fitBounds(new window.google.maps.LatLngBounds({ lat: 1.3521, lng: 103.8198 }));
 		setMap(map);
 		setTimeout(() => map.setZoom(11), 100);
@@ -36,8 +33,7 @@ export default function Map({ width, height }) {
 	}
 
 	return isLoaded ? (
-		<>
-			<GoogleMap
+		<GoogleMap
 				onClick={handleMarkerClick}
 				mapContainerStyle={{ width: width, height: height }}
 				onLoad={onLoad}
@@ -46,8 +42,6 @@ export default function Map({ width, height }) {
 				options={{mapTypeControlOptions: { mapTypeIds: ["roadmap"]} }}
 			>
 				{marker && <Marker position={marker} />}
-			</GoogleMap>
-			<p> Address: {clickedAddress}<br/> Lat Long: {marker?.lat} {marker?.lng} </p>
-		</>
+		</GoogleMap>
 	) : <></>
 }

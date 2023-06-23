@@ -1,0 +1,22 @@
+@import "../../../../theme.scss";
+
+.categoryItems {
+    color: var(--dark-green);
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.5em 0;
+}
+
+.item {
+    @extend .categoryItems;
+}
+
+.itemLink {
+    @extend .categoryItems;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--light-neon-green);
+        transform: scale(1.1);
+    }
+}

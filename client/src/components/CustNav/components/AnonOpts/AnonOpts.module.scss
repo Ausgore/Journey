@@ -1,0 +1,52 @@
+@import "../../../../theme.scss";
+
+.button {
+    color: var(--white);
+    padding: 0.5em 1.5em;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin: 0.5em;
+
+    @media (max-width: 1400px) {
+        padding: 0.5em 0.9em;
+        margin: 0.3em;
+    }
+
+    @media (max-width: 980px) {
+        padding: 0.4em 0.6em;
+        margin: 0.25em;
+    }
+
+    @media (max-width: 780px) {
+        padding: 0.3em 0.5em;
+        margin: 0.2em;
+    }
+}
+
+.signUp {
+    @extend .button;
+    background-color: var(--dark-green);
+
+    &:hover {
+        background-color: var(--light-neon-green);
+    }
+}
+
+
+.signIn {
+    @extend .button;
+    background-color: var(--light-neon-green);
+
+    &:hover {
+        background-color: var(--dark-green);
+    }
+}
+
+.menu:hover { background-color: #ebebeb; }
+
+.menuItem {
+    text-decoration: none;
+    color: #105157;
+    font-size: 1.1rem;
+}

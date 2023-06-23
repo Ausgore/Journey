@@ -1,0 +1,42 @@
+@import "../../../../theme.scss";
+
+
+.link-style {
+    font-size: 1.2rem;
+    color: var(--dark-green);
+    font-weight: 600;
+    background: linear-gradient(
+        var(--light-green), var(--light-green)
+    ) center bottom;
+    // bg width and height
+    background-size: 0% 0.1em; 
+    background-repeat:no-repeat;
+    text-decoration: none;
+    padding: 1em;
+    margin: 0 0.8em; 
+    
+    @media (max-width: 1280px) {
+        margin: 0.4em;
+        padding: 0.4em;
+    }
+
+    @media (max-width: 1080px) {
+        font-size: 1rem;
+    }
+}
+
+.genericLinks {
+    @extend .link-style;
+
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+        background-size: 100% 0.15em;
+        color: var(--light-green);
+    }
+}
+
+.active {
+    @extend .link-style;
+    background-size: 100% 0.15em;
+}
